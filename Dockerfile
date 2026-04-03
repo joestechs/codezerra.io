@@ -1,17 +1,6 @@
 # Use Node.js as the base image
 FROM node:16
 
-# Install PHP and necessary extensions
-RUN apt-get update && apt-get install -y \
-    php \
-    php-cli \
-    php-mbstring \
-    php-xml \
-    php-mysql \
-    php-curl \
-    php-zip \
-    && apt-get clean
-
 # Set the working directory
 WORKDIR /app
 
@@ -26,9 +15,8 @@ RUN npm install
 # Copy the rest of the application files
 COPY . .
 
-# Expose the ports (example: 3000 for Node.js and 80 for PHP)
+# Expose the port for Node.js
 EXPOSE 3000
-EXPOSE 80
 
 # Start the application (update this according to your entry point)
 CMD ["npm", "start"]
