@@ -10,4 +10,4 @@ if [ ! -f vendor/autoload.php ]; then
 fi
 
 # Start the application using php
-php -S 0.0.0.0:8000 -t public
+php -S 0.0.0.0:8000 -t /app

@@ -1,20 +1,7 @@
 # Railway Configuration File
 
-# This file is used for deploying your application on Railway.
-
 [build]
-  # Specify the build command
-  command = "npm install"
-
-[env]
-  # Set environment variables
-  NODE_ENV = "production"
+  builder = "dockerfile"
 
 [deploy]
-  # Specify the deployment settings
-  autoDeploy = true  
-  paths = ["dist/", "public/"]
-
-[hosting]
-  # Specify hosting settings
-  type = "static"
+  startCommand = "./docker-entrypoint.sh"
